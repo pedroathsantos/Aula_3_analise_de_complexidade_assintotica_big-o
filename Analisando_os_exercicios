@@ -1,0 +1,123 @@
+# Exercício 1:
+
+def verificar_primeiro(lista):
+ if len(lista) == 0:
+    return None
+ return lista[0]
+
+#conplexidade:O(1) - A função acessa diretamente o primeiro elemento da lista, independentemente do tamanho da lista.
+
+#Exercício 2:
+def somar_lista(lista):
+   if len(lista) == 0:
+      return 0
+   for numero in lista:
+      total += numero
+   return total
+
+#complexidade: O(n) - A função percorre toda a lista para somar os elementos, onde n é o número de elementos na lista.
+
+#Exercício 3:
+
+def busca_bineria(lista, alvo):
+   esquerda, direita = 0, len(lista) - 1
+   while esquerda <= direita:
+      meio = (esquerda + direita) // 2
+      if lista[meio] == alvo:
+         return meio
+      elif lista[meio] < alvo:
+         esquerda = meio + 1
+      else:
+         direita = meio - 1
+   return -1
+
+#complexidade: O(log n) - A busca binária reduz o espaço de busca pela metade a cada iteração, onde n é o número de elementos na lista.
+
+#Exercício 4:
+
+def pares_com_soma(lista, alvo):
+   for i in range(len(lista)):
+      for j in range(i + 1, len(lista)):
+         if lista[i] + lista[j] == alvo:
+            print(lista[i], lista[j])
+
+#complexidade: O(n^2) - A função utiliza dois loops aninhados para verificar todas as combinações possíveis de pares na lista, onde n é o número de elementos na lista.
+
+#Exercício 5:
+
+def imprimir_pares_e_soma(lista):
+   # Bloco 1: Imprime cada elemento
+   for i in range(len(lista)):
+      print(lista[i])
+   #Bloco 2: imprime todos os numeros pares
+   for i in range(len(lista)):
+      for j in range(len(lista)):
+         print(lista[i], lista[j])
+
+#complexidade: O(n^2) - O primeiro bloco tem complexidade O(n) para imprimir cada elemento, enquanto o segundo bloco tem complexidade O(n^2) devido aos loops aninhados para imprimir todas as combinações de pares. Portanto, a complexidade total é dominada pelo segundo bloco, resultando em O(n^2).
+
+#Exercício 6:
+
+def potencia_de_dois(n):
+   i = 1 
+   while i < n:
+      print(i)
+      i *= 2
+
+#complexidade: O(log n) - A função imprime potências de 2 até que i seja menor que n, onde n é o número de entrada. A cada iteração, i é multiplicado por 2, o que resulta em um crescimento logarítmico em relação a n.
+
+#Exercício 7:
+
+def fibonacci_recursivo(n):
+   if n <= 1:
+      return n 
+   return fibonacci_recursivo(n - 1) + fibonacci_recursivo(n - 2)
+
+#complexidade: O(2^n) - A função Fibonacci recursiva tem uma complexidade exponencial devido à quantidade de chamadas recursivas que são feitas para calcular os valores de Fibonacci, onde n é o número de entrada. Cada chamada gera duas novas chamadas, resultando em um crescimento exponencial do número de chamadas à medida que n aumenta.
+
+#Exercício 8:
+
+def ordenacao_bolha(lista):
+   n = len(lista)
+   for i in range(n):
+      for j in range(0, n - i - 1):
+         if lista[j] > lista[j + 1]:
+            lista[j], lista[j + 1] = lista[j + 1], lista[j]
+   return lista
+
+#complexidade: O(n^2) - O algoritmo de ordenação bolha tem uma complexidade quadrática devido aos dois loops aninhados que percorrem a lista para comparar e trocar elementos, onde n é o número de elementos na lista.
+
+def produto_matrizes(A, B, n):
+   C = [[0] * n for _ in range(n)]
+   for i in range(n):
+      for j in range(n):
+         for k in range(n):
+            C[i][j] += A[i][k] * B[k][j]
+   return C
+
+#complexidade: O(n^3) - O algoritmo de multiplicação de matrizes tem uma complexidade cúbica devido aos três loops aninhados que percorrem as matrizes para calcular o produto, onde n é o tamanho das matrizes.
+
+#Exercício 10:
+
+def merge_sort(lista):
+   if len(lista) <= 1:
+      return lista
+   meio = len(lista) // 2
+   esquerda = merge_sort(lista[:meio])
+   direita = merge_sort(lista[meio:])
+   
+   resultado = []
+   i = j = 0
+   while i < len(esquerda) and j < len(direita):
+      if esquerda[i] < direita[j]:
+         resultado.append(esquerda[i])
+         i += 1
+      else:
+         resultado.append(direita[j])
+         j += 1
+
+   resultado.extend(esquerda[i:])
+   resultado.extend(direita[j:])
+   return resultado
+
+#complexidade: O(n log n) - O algoritmo de ordenação merge sort tem uma complexidade de tempo de O(n log n) devido à divisão e conquista, onde n é o número de elementos na lista.
