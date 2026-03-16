@@ -120,4 +120,4 @@ def merge_sort(lista):
    resultado.extend(direita[j:])
    return resultado
 
-#complexidade: O(n log n) - O algoritmo de ordenação merge sort tem uma complexidade de tempo de O(n log n) devido à divisão e conquista, onde n é o número de elementos na lista.
+#complexidade: O(n log n) - O algoritmo de ordenação merge sort tem uma complexidade de tempo de O(n log n) devido à divisão e conquista, onde n é o número de elementos na lista..
